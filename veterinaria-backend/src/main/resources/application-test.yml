@@ -1,0 +1,21 @@
+# ============================================
+# PERFIL DE TESTING
+# ============================================
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/veterinaria_db_test
+    username: vet_admin
+    password: JOHANfelipe12345
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: create-drop  # Para tests, recrea la BD cada vez
+
+  flyway:
+    enabled: false  # Deshabilitado en tests (usamos ddl-auto)
+
+logging:
+  level:
+    root: WARN
+    com.veterinaria: DEBUG

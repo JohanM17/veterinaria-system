@@ -1,0 +1,30 @@
+# ============================================
+# PERFIL DE PRODUCCIÓN
+# ============================================
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    hikari:
+      maximum-pool-size: 20
+
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+
+  security:
+    jwt:
+      secret-key: ${JWT_SECRET}
+
+logging:
+  level:
+    root: WARN
+    com.veterinaria: INFO
+
+server:
+  error:
+    include-message: never
+    include-stacktrace: never
